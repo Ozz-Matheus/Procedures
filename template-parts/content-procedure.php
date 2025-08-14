@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_procedure'])) {
     // Manejo de archivos utilizando la nueva función
 
     // Archivo FOTO de perfil
-    $upload_foto_de_perfil = isset($_FILES['profile_pic']) ? agregar_prefijo_procedure($_FILES['profile_pic']) : false;
+    $upload_foto_de_perfil = isset($_FILES['profile_pic']) ? agregar_prefijo_procedure($_FILES['profile_pic'], 'profile-pic-') : false;
     if (!empty($upload_foto_de_perfil['url'])) {
         update_post_meta($procedure_id, 'Profile_pic', $upload_foto_de_perfil['url']);
     }
